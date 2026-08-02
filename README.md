@@ -2,9 +2,9 @@
 
 ## 📌 Project Overview
 
-This project predicts an individual's **Mental Health Score** using Machine Learning techniques. It follows a complete end-to-end Machine Learning workflow, covering data exploration, feature engineering, preprocessing, model building, evaluation, and deployment.
+This project predicts an individual's **Mental Health Score** using Machine Learning techniques. It follows a complete end-to-end Machine Learning workflow, covering data exploration, feature engineering, preprocessing, model training, hyperparameter tuning, model evaluation, serialization, and deployment.
 
-The primary objective is to build a production-ready ML pipeline capable of accurately predicting mental health scores based on demographic, academic, and lifestyle-related features.
+The goal is to build a production-ready machine learning pipeline capable of predicting mental health scores based on demographic, academic, lifestyle, and social media usage features.
 
 ---
 
@@ -13,32 +13,36 @@ The primary objective is to build a production-ready ML pipeline capable of accu
 * Perform Exploratory Data Analysis (EDA)
 * Understand relationships between features and the target variable
 * Detect outliers and analyze feature distributions
-* Engineer meaningful features for model training
+* Engineer meaningful features for machine learning
 * Build reusable preprocessing pipelines
-* Train and evaluate baseline machine learning models
-* Compare different regression algorithms
-* Deploy the trained model using Flask
+* Compare multiple regression algorithms
+* Optimize model performance using hyperparameter tuning
+* Evaluate models using regression metrics
+* Serialize the final trained model
+* Deploy the model using FastAPI
 
 ---
 
 # 🛠️ Tech Stack
 
-### Programming Language
+## Programming Language
 
 * Python
 
-### Libraries
+## Libraries
 
 * NumPy
 * Pandas
 * Matplotlib
 * Seaborn
 * Scikit-learn
+* Pickle
 
-### Development Environment
+## Development Environment
 
-* Jupyter Notebook
 * Google Colab
+* Jupyter Notebook
+* Git & GitHub
 
 ---
 
@@ -49,17 +53,17 @@ The primary objective is to build a production-ready ML pipeline capable of accu
 * Imported required libraries
 * Loaded the dataset
 * Explored dataset dimensions
+* Verified data types
 * Inspected sample records
-* Verified feature data types
 
 ---
 
 ## ✅ 2. Exploratory Data Analysis (EDA)
 
-Performed comprehensive EDA including:
+Performed comprehensive exploratory analysis including:
 
-* Distribution of Mental Health Score
-* Relationship between Stress Level and Mental Health Score
+* Target variable distribution
+* Stress Level vs Mental Health Score analysis
 * Correlation Heatmap
 * Outlier Detection using IQR
 * Skewness Analysis
@@ -69,20 +73,17 @@ Performed comprehensive EDA including:
 
 ## ✅ 3. Feature Engineering
 
-* Categorized numerical and categorical features
-* Identified skewed numerical columns
-* Separated:
-
-  * Skewed Features
-  * Numerical Features
-  * Ordinal Features
-  * Nominal Features
+* Identified skewed numerical features
+* Grouped numerical features
+* Categorized ordinal features
+* Categorized nominal features
+* Prepared feature lists for preprocessing
 
 ---
 
 ## ✅ 4. Data Preprocessing
 
-Implemented preprocessing using Scikit-learn Pipelines.
+Implemented modular preprocessing pipelines using Scikit-learn.
 
 ### Skewed Features
 
@@ -105,23 +106,23 @@ Implemented preprocessing using Scikit-learn Pipelines.
 
 ## ✅ 5. ColumnTransformer
 
-Built a centralized preprocessing pipeline using `ColumnTransformer` to apply different preprocessing techniques to different feature groups.
+Combined all preprocessing pipelines using **ColumnTransformer**.
 
-This ensures:
+Benefits:
 
 * Cleaner code
-* Reusable preprocessing
-* Consistent transformations
-* Production-ready workflow
+* Modular preprocessing
+* Automatic feature transformation
+* Production-ready preprocessing workflow
 
 ---
 
 ## ✅ 6. Train-Test Split
 
-Prepared the dataset for model training by splitting it into:
+Prepared the dataset for machine learning by splitting it into:
 
-* Training Set
-* Testing Set
+* Training Dataset
+* Testing Dataset
 
 using Scikit-learn's `train_test_split()`.
 
@@ -129,41 +130,96 @@ using Scikit-learn's `train_test_split()`.
 
 ## ✅ 7. Baseline Model
 
-Implemented the first baseline regression model.
-
 ### Linear Regression
 
-* Built using Scikit-learn Pipeline
-* Integrated preprocessing and model training
-* Generated predictions
-* Evaluated using:
+Implemented the baseline regression model using a Scikit-learn Pipeline.
 
-  * R² Score
-  * Mean Absolute Error (MAE)
+Evaluation Metrics:
+
+* R² Score
+* Mean Absolute Error (MAE)
+
+---
+
+## ✅ 8. Advanced Model
+
+### Random Forest Regressor
+
+Implemented a Random Forest regression model integrated with the preprocessing pipeline.
+
+Advantages:
+
+* Captures non-linear relationships
+* Handles feature interactions
+* More robust than Linear Regression
+* Better performance on structured tabular data
+
+---
+
+## ✅ 9. Hyperparameter Tuning
+
+Optimized the Random Forest model using **RandomizedSearchCV**.
+
+Tuned Parameters:
+
+* n_estimators
+* max_depth
+* min_samples_split
+* min_samples_leaf
+
+Cross Validation:
+
+* 5-Fold Cross Validation
+
+Optimization Metric:
+
+* R² Score
+
+---
+
+## ✅ 10. Model Evaluation
+
+Compared multiple regression models using:
+
+* R² Score
+* Training R²
+* Mean Absolute Error (MAE)
+* Root Mean Squared Error (RMSE)
+
+Models Compared:
+
+* Linear Regression
+* Random Forest (Default)
+* Random Forest (Hyperparameter Tuned)
+
+Selected the best-performing model based on overall evaluation metrics.
+
+---
+
+## ✅ 11. Model Serialization
+
+Saved the final trained machine learning pipeline as a `.pkl` file using Pickle.
+
+The serialized model contains:
+
+* Complete preprocessing pipeline
+* Encoders
+* Scalers
+* ColumnTransformer
+* Tuned Random Forest model
+
+This allows the model to be loaded directly during deployment without retraining.
 
 ---
 
 # 📊 Evaluation Metrics
 
-Current metrics used:
+Regression metrics used:
 
 * R² Score
 * Mean Absolute Error (MAE)
-
-Additional metrics will be added while comparing advanced models.
-
----
-
-# 🚀 Upcoming Work
-
-* Train Random Forest Regressor
-* Compare multiple regression algorithms
-* Hyperparameter Tuning
-* Model Selection
-* Save trained model using Pickle
-* Build Flask API
-* Deploy the complete application
-* Create an interactive prediction interface
+* Mean Squared Error (MSE)
+* Root Mean Squared Error (RMSE)
 
 ---
 
@@ -173,6 +229,7 @@ Additional metrics will be added while comparing advanced models.
 Mental-Health-Score-Predictor/
 │
 ├── Mental_Health_Score_Predictor.ipynb
+├── mental_health_model.pkl
 ├── dataset.csv
 ├── README.md
 └── .gitignore
@@ -180,17 +237,50 @@ Mental-Health-Score-Predictor/
 
 ---
 
+# 🚀 Upcoming Work
+
+* Build FastAPI backend
+* Create API endpoints for prediction
+* Validate requests using Pydantic
+* Connect frontend with FastAPI
+* Deploy the application
+* Improve UI/UX
+* Containerize using Docker (Optional)
+* Deploy on Render/Railway/AWS
+
+---
+
 # 📈 Current Project Status
 
-**Status:** 🟢 In Progress
+**Status:** 🟢 Machine Learning Phase Completed
 
-### Current Milestone
+### ✅ Completed
 
-* ✅ Exploratory Data Analysis Completed
-* ✅ Feature Engineering Completed
-* ✅ Data Preprocessing Completed
-* ✅ ColumnTransformer Implemented
-* ✅ Train-Test Split Completed
-* ✅ Baseline Linear Regression Model Completed
+* Data Loading
+* Exploratory Data Analysis (EDA)
+* Feature Engineering
+* Data Preprocessing
+* Scikit-learn Pipelines
+* ColumnTransformer
+* Train-Test Split
+* Linear Regression Baseline
+* Random Forest Regressor
+* Hyperparameter Tuning
+* Model Evaluation
+* Model Comparison
+* Model Serialization (.pkl)
 
-**Next Milestone:** Model Comparison using Random Forest and other regression algorithms.
+---
+
+## 🎯 Next Milestone
+
+**FastAPI Backend Development**
+
+Upcoming tasks include:
+
+* Building REST APIs
+* Request validation using Pydantic
+* Loading the serialized model
+* Serving real-time predictions
+* Frontend integration
+* Cloud deployment
