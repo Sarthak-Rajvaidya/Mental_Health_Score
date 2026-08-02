@@ -2,84 +2,195 @@
 
 ## 📌 Project Overview
 
-This project predicts an individual's **Mental Health Score** using Machine Learning techniques. The project follows a complete end-to-end ML workflow, from data exploration and preprocessing to model training, evaluation, and deployment.
+This project predicts an individual's **Mental Health Score** using Machine Learning techniques. It follows a complete end-to-end Machine Learning workflow, covering data exploration, feature engineering, preprocessing, model building, evaluation, and deployment.
+
+The primary objective is to build a production-ready ML pipeline capable of accurately predicting mental health scores based on demographic, academic, and lifestyle-related features.
 
 ---
 
-## 🎯 Objectives
+# 🎯 Objectives
 
-* Understand the dataset through Exploratory Data Analysis (EDA)
-* Identify relationships between features and the target variable
-* Perform feature engineering and preprocessing
-* Build a robust machine learning pipeline
-* Train and evaluate predictive models
-* Deploy the final model for real-world predictions
+* Perform Exploratory Data Analysis (EDA)
+* Understand relationships between features and the target variable
+* Detect outliers and analyze feature distributions
+* Engineer meaningful features for model training
+* Build reusable preprocessing pipelines
+* Train and evaluate baseline machine learning models
+* Compare different regression algorithms
+* Deploy the trained model using Flask
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Tech Stack
+
+### Programming Language
 
 * Python
+
+### Libraries
+
 * NumPy
 * Pandas
 * Matplotlib
 * Seaborn
 * Scikit-learn
-* Jupyter Notebook / Google Colab
+
+### Development Environment
+
+* Jupyter Notebook
+* Google Colab
 
 ---
 
-## 📂 Workflow
+# 📂 Project Workflow
 
-### ✅ Completed
+## ✅ 1. Data Loading
 
-### 1. Data Loading
-
-* Imported required Python libraries
-* Loaded the dataset using Pandas
-* Explored dataset shape and sample records
-
-### 2. Exploratory Data Analysis (EDA)
-
-* Target variable distribution
-* Stress Level vs Mental Health Score analysis
-* Correlation heatmap
-* Outlier detection using IQR
-* Skewness analysis of numerical features
-
-### 3. Feature Engineering
-
-* Identified skewed numerical features
-* Grouped numerical, ordinal, and nominal features
-* Prepared feature lists for preprocessing
-
-### 4. Data Preprocessing
-
-Implemented separate preprocessing pipelines using Scikit-learn:
-
-* Log Transformation for skewed features
-* Standard Scaling for numerical features
-* Ordinal Encoding for ordered categorical features
+* Imported required libraries
+* Loaded the dataset
+* Explored dataset dimensions
+* Inspected sample records
+* Verified feature data types
 
 ---
 
-## 🚧 Upcoming Work
+## ✅ 2. Exploratory Data Analysis (EDA)
 
-* Complete preprocessing using ColumnTransformer
-* One-Hot Encoding for nominal features
-* Train-Test Split
-* Model Training
-* Model Evaluation
+Performed comprehensive EDA including:
+
+* Distribution of Mental Health Score
+* Relationship between Stress Level and Mental Health Score
+* Correlation Heatmap
+* Outlier Detection using IQR
+* Skewness Analysis
+* Numerical Feature Analysis
+
+---
+
+## ✅ 3. Feature Engineering
+
+* Categorized numerical and categorical features
+* Identified skewed numerical columns
+* Separated:
+
+  * Skewed Features
+  * Numerical Features
+  * Ordinal Features
+  * Nominal Features
+
+---
+
+## ✅ 4. Data Preprocessing
+
+Implemented preprocessing using Scikit-learn Pipelines.
+
+### Skewed Features
+
+* Log Transformation
+* Standard Scaling
+
+### Numerical Features
+
+* Standard Scaling
+
+### Ordinal Features
+
+* Ordinal Encoding
+
+### Nominal Features
+
+* One-Hot Encoding
+
+---
+
+## ✅ 5. ColumnTransformer
+
+Built a centralized preprocessing pipeline using `ColumnTransformer` to apply different preprocessing techniques to different feature groups.
+
+This ensures:
+
+* Cleaner code
+* Reusable preprocessing
+* Consistent transformations
+* Production-ready workflow
+
+---
+
+## ✅ 6. Train-Test Split
+
+Prepared the dataset for model training by splitting it into:
+
+* Training Set
+* Testing Set
+
+using Scikit-learn's `train_test_split()`.
+
+---
+
+## ✅ 7. Baseline Model
+
+Implemented the first baseline regression model.
+
+### Linear Regression
+
+* Built using Scikit-learn Pipeline
+* Integrated preprocessing and model training
+* Generated predictions
+* Evaluated using:
+
+  * R² Score
+  * Mean Absolute Error (MAE)
+
+---
+
+# 📊 Evaluation Metrics
+
+Current metrics used:
+
+* R² Score
+* Mean Absolute Error (MAE)
+
+Additional metrics will be added while comparing advanced models.
+
+---
+
+# 🚀 Upcoming Work
+
+* Train Random Forest Regressor
+* Compare multiple regression algorithms
 * Hyperparameter Tuning
-* Model Serialization (Pickle)
-* Flask API
-* Model Deployment
+* Model Selection
+* Save trained model using Pickle
+* Build Flask API
+* Deploy the complete application
+* Create an interactive prediction interface
 
 ---
 
-## 📈 Project Status
+# 📁 Project Structure
 
-🚀 In Progress
+```text
+Mental-Health-Score-Predictor/
+│
+├── Mental_Health_Score_Predictor.ipynb
+├── dataset.csv
+├── README.md
+└── .gitignore
+```
 
-Current Phase:
-**Feature Engineering & Data Preprocessing**
+---
+
+# 📈 Current Project Status
+
+**Status:** 🟢 In Progress
+
+### Current Milestone
+
+* ✅ Exploratory Data Analysis Completed
+* ✅ Feature Engineering Completed
+* ✅ Data Preprocessing Completed
+* ✅ ColumnTransformer Implemented
+* ✅ Train-Test Split Completed
+* ✅ Baseline Linear Regression Model Completed
+
+**Next Milestone:** Model Comparison using Random Forest and other regression algorithms.
