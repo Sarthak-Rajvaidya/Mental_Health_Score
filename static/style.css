@@ -2,19 +2,19 @@
    TOKENS
    ========================================================= */
 :root {
-  --ink:        #182420;
-  --ink-soft:   #4A5850;
-  --paper:      #EEF2EE;
-  --paper-deep: #E2E8E1;
+  --ink:        #17211C;
+  --ink-soft:   #55645B;
+  --paper:      #F4F1E7;
+  --paper-deep: #E7E1CF;
   --surface:    #FFFFFF;
-  --line:       #D6DED5;
+  --line:       #DED8C4;
 
-  --pine:       #21594A;
-  --pine-deep:  #163D33;
-  --pine-tint:  #E4EFE9;
+  --pine:       #1F5C49;
+  --pine-deep:  #0F3428;
+  --pine-tint:  #E4EFE6;
 
-  --amber:      #E3B341;
-  --coral:      #D9534F;
+  --amber:      #C9973F;
+  --coral:      #C0533C;
   --sage:       #4C9A78;
 
   --font-display: 'Fraunces', Georgia, serif;
@@ -25,8 +25,8 @@
   --radius-md: 14px;
   --radius-lg: 22px;
 
-  --shadow-card: 0 1px 2px rgba(24,36,32,0.04), 0 12px 28px -8px rgba(24,36,32,0.10);
-  --shadow-lift: 0 2px 4px rgba(24,36,32,0.06), 0 20px 40px -12px rgba(22,61,51,0.20);
+  --shadow-card: 0 1px 2px rgba(23,33,28,0.04), 0 12px 28px -8px rgba(23,33,28,0.10);
+  --shadow-lift: 0 2px 4px rgba(23,33,28,0.06), 0 20px 40px -12px rgba(15,52,40,0.22);
 }
 
 * { box-sizing: border-box; }
@@ -36,7 +36,7 @@ html { -webkit-font-smoothing: antialiased; }
 body {
   margin: 0;
   background:
-    radial-gradient(1200px 600px at 85% -10%, #F4F8F3 0%, transparent 55%),
+    radial-gradient(1200px 600px at 85% -10%, #F9F6EC 0%, transparent 55%),
     var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
@@ -207,14 +207,14 @@ select {
 }
 
 select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%234A5850' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%2355645B' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   padding-right: 34px;
   cursor: pointer;
 }
 
-input:hover, select:hover { border-color: #B9C6B7; }
+input:hover, select:hover { border-color: #C7BFA5; }
 
 input:focus, select:focus {
   outline: none;
@@ -230,7 +230,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 .field.field-error input,
 .field.field-error select {
   border-color: var(--coral);
-  background: #FBEEEE;
+  background: #F8EBE6;
 }
 
 .unit-input { position: relative; }
@@ -248,7 +248,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 
 .hint {
   font-size: 11.5px;
-  color: #90A096;
+  color: #9C9478;
 }
 
 .error-msg {
@@ -278,14 +278,14 @@ input:invalid:not(:placeholder-shown):not(:focus) {
   cursor: pointer;
   transition: all 0.15s ease;
 }
-.seg-btn:hover { border-color: #B9C6B7; color: var(--ink); }
+.seg-btn:hover { border-color: #C7BFA5; color: var(--ink); }
 .seg-btn.active {
   background: var(--pine);
   border-color: var(--pine);
   color: #fff;
 }
 .seg-btn[data-value="Very High"].active { background: var(--coral); border-color: var(--coral); }
-.seg-btn[data-value="High"].active { background: #C97C3B; border-color: #C97C3B; }
+.seg-btn[data-value="High"].active { background: var(--amber); border-color: var(--amber); color: #2A1E08; }
 
 /* footer / submit */
 .form-footer {
@@ -299,7 +299,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 .api-note {
   font-family: var(--font-mono);
   font-size: 11.5px;
-  color: #90A096;
+  color: #9C9478;
   margin: 0;
 }
 .api-note code {
@@ -473,9 +473,9 @@ input:invalid:not(:placeholder-shown):not(:focus) {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(217,83,79,0.18);
-  color: #FF9B95;
-  border: 1.5px solid rgba(255,155,149,0.4);
+  background: rgba(192,83,60,0.18);
+  color: #FFA88F;
+  border: 1.5px solid rgba(255,168,143,0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -509,7 +509,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 }
 .site-footer p {
   font-size: 12.5px;
-  color: #90A096;
+  color: #9C9478;
   text-align: center;
   margin: 0;
 }
