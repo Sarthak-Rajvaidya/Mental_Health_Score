@@ -1,93 +1,165 @@
 # 🧠 Mental Health Score Predictor
 
-## 📌 Project Overview
+An end-to-end Machine Learning project that predicts an individual's **Mental Health Score** based on demographic, academic, social media usage, and lifestyle-related features.
 
-The **Mental Health Score Predictor** is an end-to-end Machine Learning project that predicts an individual's mental health score based on demographic, academic, lifestyle, and social media usage data.
+The project demonstrates a complete production-ready ML workflow, including data preprocessing, feature engineering, model training, hyperparameter tuning, FastAPI backend development, frontend integration, and cloud deployment.
 
-The project demonstrates the complete ML lifecycle—from data preprocessing and model training to deploying the trained model through a FastAPI backend with a responsive web interface.
+---
+
+# 🌐 Live Demo
+
+🚀 **Live Application**
+
+https://mental-health-score-predictor-u5yr.onrender.com/
+
+---
+
+# 💻 GitHub Repository
+
+📂 Repository
+
+https://github.com/Sarthak-Rajvaidya/Mental_Health_Score
+
+---
+
+# 📌 Project Overview
+
+This project predicts an individual's mental health score using Machine Learning Regression techniques.
+
+The complete pipeline includes:
+
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Data Preprocessing
+- Machine Learning Pipelines
+- Model Training
+- Hyperparameter Tuning
+- Model Evaluation
+- Model Serialization
+- FastAPI Backend
+- Frontend Integration
+- Cloud Deployment on Render
+
+---
+
+# 🎯 Objectives
+
+- Understand the dataset through Exploratory Data Analysis
+- Build reusable preprocessing pipelines
+- Compare multiple regression models
+- Improve model performance through Hyperparameter Tuning
+- Build a production-ready prediction API
+- Deploy the complete application on the cloud
 
 ---
 
 # 🚀 Features
 
-- 📊 Exploratory Data Analysis (EDA)
-- 🧹 Data Cleaning & Feature Engineering
-- ⚙️ Scikit-learn Pipelines
-- 🔄 ColumnTransformer-based Preprocessing
-- 🌲 Random Forest Regression
-- 🎯 Hyperparameter Tuning using RandomizedSearchCV
-- 📈 Model Evaluation using R², MAE & RMSE
-- 💾 Model Serialization using Joblib
-- ⚡ FastAPI REST API
-- 🛡️ Pydantic Input Validation
-- 🌐 Interactive Frontend using HTML, CSS & JavaScript
+✅ Interactive Web Interface
+
+✅ Real-time Mental Health Score Prediction
+
+✅ Input Validation using Pydantic
+
+✅ End-to-End Scikit-learn Pipeline
+
+✅ Automatic Feature Preprocessing
+
+✅ Production Ready FastAPI Backend
+
+✅ Cloud Hosted on Render
 
 ---
 
-# 🛠️ Tech Stack
+# 🛠 Tech Stack
 
-### Machine Learning
+## Programming Language
 
 - Python
+
+---
+
+## Machine Learning
+
+- Scikit-learn
+- Random Forest Regressor
+- Linear Regression
+
+---
+
+## Data Processing
+
 - NumPy
 - Pandas
+
+---
+
+## Data Visualization
+
 - Matplotlib
 - Seaborn
-- Scikit-learn
 
-### Backend
+---
+
+## Backend
 
 - FastAPI
 - Pydantic
-- Joblib
-- Uvicorn
 
-### Frontend
+---
 
-- HTML5
-- CSS3
+## Frontend
+
+- HTML
+- CSS
 - JavaScript
 
 ---
 
-# 📂 Project Workflow
+## Deployment
 
-## ✅ 1. Data Loading
-
-- Imported required libraries
-- Loaded the dataset
-- Checked shape and feature types
-- Inspected sample records
+- Render
 
 ---
 
-## ✅ 2. Exploratory Data Analysis
+# 📂 Machine Learning Workflow
 
-Performed detailed EDA including:
+## 1️⃣ Data Loading
 
-- Distribution of Mental Health Score
-- Stress Level vs Mental Health Score
+- Loaded dataset
+- Explored dataset shape
+- Inspected data types
+- Viewed sample records
+
+---
+
+## 2️⃣ Exploratory Data Analysis (EDA)
+
+Performed comprehensive analysis including:
+
+- Target Distribution
 - Correlation Heatmap
+- Stress Level vs Mental Health Score
+- Numerical Feature Analysis
 - Outlier Detection (IQR)
 - Skewness Analysis
-- Numerical Feature Analysis
 
 ---
 
-## ✅ 3. Feature Engineering
+## 3️⃣ Feature Engineering
 
-- Categorized features into:
-  - Skewed Numerical Features
-  - Numerical Features
-  - Ordinal Features
-  - Nominal Features
-- Grouped countries into top countries and "Other"
+Separated features into:
+
+- Skewed Numerical Features
+- Numerical Features
+- Ordinal Features
+- Nominal Features
 
 ---
 
-## ✅ 4. Data Preprocessing
+## 4️⃣ Data Preprocessing
 
-Created reusable preprocessing pipelines using Scikit-learn:
+Created independent preprocessing pipelines using Scikit-learn.
 
 ### Skewed Features
 
@@ -108,46 +180,47 @@ Created reusable preprocessing pipelines using Scikit-learn:
 
 ---
 
-## ✅ 5. ColumnTransformer
+## 5️⃣ Column Transformer
 
-Implemented ColumnTransformer to combine multiple preprocessing pipelines into a single reusable preprocessing workflow.
+Combined all preprocessing pipelines into a single reusable `ColumnTransformer`.
 
----
+This ensures:
 
-## ✅ 6. Train-Test Split
-
-Split the dataset into training and testing sets using `train_test_split()`.
-
----
-
-## ✅ 7. Baseline Model
-
-Implemented Linear Regression as the baseline model.
-
-Evaluation Metrics:
-
-- R² Score
-- Mean Absolute Error (MAE)
+- Cleaner Code
+- Reusability
+- Consistent Transformations
+- Production-ready Workflow
 
 ---
 
-## ✅ 8. Random Forest Regression
+## 6️⃣ Train-Test Split
 
-Implemented Random Forest Regressor.
-
-Compared with Linear Regression using:
-
-- Training R²
-- Testing R²
-- MAE
+Split the dataset into Training and Testing sets.
 
 ---
 
-## ✅ 9. Hyperparameter Tuning
+## 7️⃣ Model Building
 
-Optimized Random Forest using `RandomizedSearchCV`.
+Implemented:
 
-Tuned Parameters:
+### Linear Regression
+
+Used as the baseline model.
+
+### Random Forest Regressor
+
+Improved prediction performance by learning non-linear relationships within the dataset.
+
+---
+
+## 8️⃣ Hyperparameter Tuning
+
+Optimized the Random Forest model using:
+
+- RandomizedSearchCV
+- Cross Validation
+
+Tuned parameters included:
 
 - n_estimators
 - max_depth
@@ -156,162 +229,142 @@ Tuned Parameters:
 
 ---
 
-## ✅ 10. Model Evaluation
+## 9️⃣ Model Evaluation
 
-Compared all models using:
+Compared models using:
 
 - R² Score
 - Mean Absolute Error (MAE)
 - Root Mean Squared Error (RMSE)
 
----
-
-## ✅ 11. Model Serialization
-
-Saved the best-performing model using Joblib for deployment.
-
-```
-Mental_Health_Model.pkl
-```
+The tuned Random Forest model achieved the best overall performance.
 
 ---
 
-## ✅ 12. FastAPI Backend
+## 🔟 Model Serialization
 
-Built REST APIs for prediction.
-
-### Endpoints
-
-```
-GET /
-```
-
-Returns a welcome message.
-
-```
-POST /predict
-```
-
-Accepts student information and returns the predicted Mental Health Score.
+Saved the trained model using Joblib (`.pkl`) for deployment.
 
 ---
 
-## ✅ 13. Pydantic Validation
+## 1️⃣1️⃣ Backend API
 
-Validated incoming request data using Pydantic models.
+Developed a REST API using FastAPI.
 
-Validation includes:
+Endpoints include:
 
-- Numeric ranges
-- Required fields
-- Categorical value constraints using Literal
-- Automatic request validation
+### GET /
+
+Returns the home page.
+
+### POST /predict
+
+Accepts user inputs and returns the predicted Mental Health Score.
 
 ---
 
-## ✅ 14. Frontend
+## 1️⃣2️⃣ Frontend
 
-Built a responsive frontend using:
+Built an interactive frontend using:
 
 - HTML
 - CSS
 - JavaScript
 
-Features:
+Users can:
 
-- User-friendly input form
-- Sends POST request to FastAPI
-- Displays predicted Mental Health Score
-- Responsive design
+- Enter required details
+- Submit prediction requests
+- View predicted Mental Health Score instantly
+
+---
+
+## 1️⃣3️⃣ Deployment
+
+The application is deployed on **Render**.
+
+Live Demo:
+
+https://mental-health-score-predictor-u5yr.onrender.com/
 
 ---
 
 # 📁 Project Structure
 
-```text
-Mental-Health-Score-Predictor/
+```
+Mental_Health_Score/
 │
-├── frontend/
-│   ├── index.html
+├── main.py
+├── Mental_Heath_Model.pkl
+├── requirements.txt
+├── README.md
+│
+├── templates/
+│   └── index.html
+│
+├── static/
 │   ├── style.css
 │   └── script.js
 │
-├── main.py
-├── Mental_Health_Model.pkl
 ├── Mental_Health_Score_Predictor.ipynb
-├── dataset.csv
-├── requirements.txt
-├── README.md
-└── .gitignore
+└── dataset.csv
 ```
 
 ---
 
-# 📊 Evaluation Metrics
+# 🎓 Machine Learning Concepts Implemented
 
-- R² Score
-- MAE
-- RMSE
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Data Preprocessing
+- Skewness Handling
+- Log Transformation
+- Standard Scaling
+- Ordinal Encoding
+- One-Hot Encoding
+- Scikit-learn Pipeline
+- ColumnTransformer
+- Train-Test Split
+- Linear Regression
+- Random Forest Regression
+- Hyperparameter Tuning
+- Model Evaluation
+- Model Serialization
+- FastAPI
+- Pydantic Validation
+- REST API Development
+- Deployment
 
 ---
 
-# 🚀 Future Improvements
+# 📸 Application Preview
 
-- Docker Containerization
-- Cloud Deployment (Render / Railway / AWS)
-- CI/CD Pipeline
+> Add screenshots of the Home Page and Prediction Result here.
+
+---
+
+# 📈 Future Improvements
+
 - User Authentication
 - Prediction History
-- Database Integration
+- Dashboard & Analytics
+- Explainable AI (SHAP/LIME)
+- Docker Containerization
+- CI/CD Pipeline
+- AWS Deployment
 - Model Monitoring
-- Explainable AI (SHAP)
 
 ---
 
-# 📷 Application Flow
-
-```
-User
-   │
-   ▼
-Frontend (HTML/CSS/JS)
-   │
-   ▼
-FastAPI Backend
-   │
-   ▼
-Pydantic Validation
-   │
-   ▼
-Preprocessing Pipeline
-   │
-   ▼
-Random Forest Model
-   │
-   ▼
-Predicted Mental Health Score
-```
-
----
-
-# 📈 Current Status
-
-🟢 **Completed**
-
-- ✅ End-to-End Machine Learning Pipeline
-- ✅ Model Training & Evaluation
-- ✅ Hyperparameter Tuning
-- ✅ Model Serialization
-- ✅ FastAPI Backend
-- ✅ Pydantic Validation
-- ✅ Frontend Integration
-
----
-
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Sarthak Rajvaidya**
 
-B.Tech Computer Engineering | AI & Software Engineering Enthusiast
+GitHub:
+https://github.com/Sarthak-Rajvaidya
 
-Building production-ready AI applications using Machine Learning, FastAPI, and modern web technologies.
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub!
